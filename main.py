@@ -1,7 +1,5 @@
-from crypto.key_manager import generate_key, load_key
+from crypto.encryptor import encrypt_file
 
-generate_key()
+encrypt_file("sample.txt")
 
-key = load_key()
-
-print(key)
+print("Encryption complete.")
