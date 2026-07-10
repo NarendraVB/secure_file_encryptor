@@ -1,5 +1,10 @@
 from crypto.encryptor import encrypt_file
+from crypto.decryptor import decrypt_file
 
-encrypt_file("sample.txt")
+encrypted_file = encrypt_file("sample.txt")
 
-print("Encryption complete.")
+print("Encrypted:", encrypted_file)
+
+decrypted_file = decrypt_file(encrypted_file)
+
+print("Decrypted:", decrypted_file)
