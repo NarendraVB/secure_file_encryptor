@@ -1,2 +1,1 @@
-CyberSpec Project 5
-Encryption Test
+CyberSpec Encryption Test
