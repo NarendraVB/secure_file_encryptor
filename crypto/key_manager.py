@@ -7,9 +7,14 @@ KEY_FILE = KEY_DIR / "secret.key"
 
 def generate_key():
     """
-    Generate and save a new Fernet key.
+    Generate a new Fernet key only if one doesn't already exist.
     """
     KEY_DIR.mkdir(exist_ok=True)
+
+    if KEY_FILE.exists():
+        raise FileExistsError(
+            "Encryption key already exists. Refusing to overwrite it."
+        )
 
     key = Fernet.generate_key()
 
@@ -23,5 +28,10 @@ def load_key():
     """
     Load the existing encryption key.
     """
+    if not KEY_FILE.exists():
+        raise FileNotFoundError(
+            "Encryption key not found. Generate one first."
+        )
+
     with open(KEY_FILE, "rb") as file:
         return file.read()
