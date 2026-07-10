@@ -1,10 +1,7 @@
 from crypto.encryptor import encrypt_file
 from crypto.decryptor import decrypt_file
 
-encrypted_file = encrypt_file("sample.txt")
+# Uncomment ONE test at a time
 
-print("Encrypted:", encrypted_file)
-
-decrypted_file = decrypt_file(encrypted_file)
-
-print("Decrypted:", decrypted_file)
+encrypt_file("encrypted")
+# decrypt_file("encrypted/sample.txt.enc")
